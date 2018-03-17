@@ -4,10 +4,10 @@
  */
 ; (function ($, window, document, undefined) {
   SimpleSelectorPlugin = function (scope) {
-    var that = this,
-    this.owl = scope,
-      this.removableClasses = [],
-      this.owl._options = $.extend({}, SimpleSelectorPlugin.Defaults, this.owl.options);
+    var that = this;
+    this.owl = scope;
+    this.removableClasses = [];
+    this.owl._options = $.extend({}, SimpleSelectorPlugin.Defaults, this.owl.options);
 
     this.owl.$element.on('initialize.owl.carousel', function (event) {
       if (!that.owl.$element.hasClass(that.owl._options.baseClass)) {
@@ -26,5 +26,5 @@
       this.owl.$element.removeClass(this.removableClasses[i]);
     }
   };
-  $.fn.owlCarousel.Constructor.Plugins['pluginName'] = SimpleSelectorPlugin;
+  $.fn.owlCarousel.Constructor.Plugins.SimpleSelectorPlugin = SimpleSelectorPlugin;
 })(window.Zepto || window.jQuery, window, document);
